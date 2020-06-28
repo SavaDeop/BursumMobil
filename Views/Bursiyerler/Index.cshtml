@@ -1,0 +1,78 @@
+﻿@model IEnumerable<BursumMobil.Models.Bursiyer>
+
+@{
+    Layout = null ;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BURSUM MOBIL |Türkiye'nin Burs Platformu </title>
+    <!-- Start WOWSlider.com HEAD section --> <!-- add to the <head> of your page -->
+    <link rel="stylesheet" type="" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!--BUNLAR ICON EKLEMEK İÇİN KÜTÜPHANELER-->
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+    <script type="text/javascript" src="~/js/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+    <link rel="stylesheet" href="~/css/bootstrap-social.css">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="stylesheet" href="~/css/reset.css">
+</head>
+<body>
+    <hr />
+    <div class="col-md-10">
+        @Html.ActionLink("Yeni Oluştur", "Create", null, new { @class = "btn btn-primary btx-xs" })
+    </div>
+    <hr />
+    <div class="col-md-10 col-xl-10 fc-right">
+        @Html.ActionLink("Geri Dön", "Index", "Admin", null, new { @class = "btn btn-primary btx-xs" })
+    </div>
+    <hr />
+    <table class="table table-bordered table-hover table-striped">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Ad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Soyad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TcKimlikNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ePosta)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Soyad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.TcKimlikNo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ePosta)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btx-xs" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btx-xs" }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btx-xs" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</body>
+</html>

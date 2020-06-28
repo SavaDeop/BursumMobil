@@ -1,0 +1,374 @@
+﻿@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+<!DOCTYPE html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width initial">
+        <meta http-equiv="X-UA-Copatible" content="ie=edge">
+        <title>BURSUM MOBIL |Türkiye'nin Burs Platformu </title>
+        <style>
+            header {
+                margin-left: -9px;
+                margin-top: 0px;
+                background: burlywood;
+                height: 60px;
+                width: 1440px;
+            }
+
+
+                header ul {
+                    left: 200px;
+                }
+
+                    header ul li {
+                        float: left;
+                        font-size: 20px;
+                        margin-left: 0px;
+                        list-style-type: none;
+                    }
+
+                        header ul li a {
+                            padding: 20px;
+                            display: block;
+                            color: #eee;
+                            text-decoration: none;
+                        }
+
+                            header ul li a:hover {
+                                text-decoration: none;
+                                color: white;
+                                background: navajowhite;
+                            }
+
+            .logo img {
+                float: left;
+                font-weight: 200;
+                height: 60px;
+                margin-left: 20px;
+                background: burlywood;
+            }
+
+            .logot img {
+                float: right;
+                height: 60px;
+                background: burlywood;
+            }
+
+            button {
+                padding: 17px;
+                font-size: 20px;
+                float: right;
+                color: white;
+                background-color: burlywood;
+                border: none;
+            }
+
+                button:hover {
+                    text-decoration: none;
+                    color: white;
+                    background: navajowhite;
+                }
+
+            .sidebar {
+                background-image: url(/Users/irem/Desktop/bitirme/images/.jpg);
+                margin-top: 70px;
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                padding: 30px;
+                width: 94%;
+                height: 30%;
+                background-color: antiquewhite;
+            }
+
+            .profile-header {
+                background: #fff;
+                width: 100%;
+                display: flex;
+                height: 190px;
+                position: relative;
+                box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.2);
+            }
+
+            .profile-img {
+                float: left;
+                width: 340px;
+                height: 200px;
+            }
+
+
+                .profile-img img {
+                    border-radius: 50%;
+                    height: 230px;
+                    width: 230px;
+                    border: 5px solid #fff;
+                    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+                    position: absolute;
+                    left: 50px;
+                    top: -5px;
+                    z-index: 5;
+                    background: #fff;
+                }
+
+            .profile-nav-info {
+                float: left;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding-top: 60px;
+            }
+
+                .profile-nav-info h3 {
+                    font-variant: small-caps;
+                    font-size: 37px;
+                    font-family: sans-serif;
+                    font-weight: bold;
+                    margin-bottom: 2px;
+                    color: #777;
+                }
+
+                .profile-nav-info .address {
+                    display: flex;
+                    font-weight: bold;
+                    color: #777;
+                }
+
+
+
+
+
+
+            .main-bd {
+                width: 80%;
+                margin-left: 436px;
+                margin-top: 300px;
+                padding-right: 15px;
+                margin-bottom: -130px;
+            }
+
+            .profile-side {
+                width: 570px;
+                background: antiquewhite;
+                box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+                padding: 46px 30px 20px;
+                font-family: "Bree Serif", serif;
+                margin-left: 10px;
+                z-index: 99;
+                height: 400px;
+                border-radius: 20px;
+            }
+
+                .profile-side p {
+                    margin-bottom: 7px;
+                    color: #333;
+                    font-size: 14px;
+                }
+
+
+
+            .profile-btn {
+                display: flex;
+                border-radius: 10px;
+            }
+
+
+            button.createbtn i {
+                margin-right: 5px;
+                border-radius: 10px;
+            }
+
+            button.createbtn {
+                margin-right: 5px;
+                border-radius: 10px;
+            }
+
+
+
+            .alsanabuton {
+                border-radius: 10px;
+                width: 200px;
+                margin-top: 80px;
+                padding: 15px;
+                font-size: 20px;
+                color: white;
+                background-color: burlywood;
+                border: none;
+            }
+
+                .alsanabuton :hover {
+                    text-decoration: none;
+                    color: white;
+                    background: navajowhite;
+                }
+
+            .ody {
+                font: Arial, Helvetica, sans-serif;
+                font-size: 19px;
+                margin-top: -460px;
+                padding: 15px;
+            }
+
+            .menum {
+                list-style-type: none;
+                margin-top: -28px;
+                padding: 15px;
+            }
+
+                .menum a {
+                    display: block;
+                    color: #000;
+                    background-color: antiquewhite;
+                    width: 300px;
+                    text-decoration: none;
+                    padding: 18px 20px;
+                    border-radius: 10px;
+                }
+
+                    .menum a:hover {
+                        font-weight: bold;
+                        color: #FFFFFF;
+                        background-color: navajowhite;
+                    }
+
+                .menum li {
+                    margin: 0px 0px 2px 0px;
+                }
+        </style>
+    </head>
+    <body>
+        @*<header>
+
+            <div class="logo">
+                <img src="~/images/scholarship.png" alt="">
+            </div>
+            <ul>
+                <li><a href="girildiindex.html">Anasayfa</a></li>
+                <li><a href="girildibursverenler.html">Burs Verenler</a></li>
+                <li><a href="bursarama.html">Burs Ara</a></li>
+                <li><a href="">Etkinlikler</a></li>
+
+            </ul>
+
+
+            <button type="button" onClick="location.href='çıkıldı.html'">Çıkış Yap</button>
+            <button type="button" onClick="location.href='denemeprofil.html'">Profil</button>
+            <div class="logot">
+                <img src="~/images/ll.png" alt="">
+            </div>
+        </header>*@
+        <div class="sidebar">
+
+            <div class="profile-img">
+                <img src="~/images/c.png" width="300" alt="Profile Image">
+            </div>
+            <div class="profile-nav-info">
+                <h3 class="user-name">@Model.Ad @Model.Soyad</h3>
+                <div class="address">
+                    <span id="state" class="state">Alanya/</span>
+                    <span id="country" class="country">Türkiye.</span>
+
+
+                    <button class="alsanabuton" onClick="location.href='basvurular.html'">Başvurular</button>
+                    <p>&nbsp;&nbsp;&nbsp;</p>
+
+                    <button class="alsanabuton" onClick="location.href='değerlendşrmeler.html'">Değerlendirmeler</button>
+                    <p>&nbsp;&nbsp;&nbsp;</p>
+
+                    <button class="alsanabuton" onClick="location.href='sonuclar.html'">Sonuçlar</button>
+
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="main-bd">
+            <div class="left-side">
+                <div class="profile-side">
+
+                    <h3> <u>Başvurularım</u> </h3>
+                    <a href="basvurularım.html" class="l">Başvurularım (0)</a>
+                    <p>&nbsp;&nbsp;</p>
+                    <a href="basvurularım.html" class="l">Değerlendirilenler (0)</a>
+                    <p>&nbsp;&nbsp;</p>
+                    <a href="basvurularım.html" class="l">Sonuçlandırılanlar (0)</a>
+
+                </div>
+                </div>
+                </div>
+
+                <div class="ody">
+                    <ul class="menum">
+                        <li><a href="aktiviteler.html">Aktiviteler</a></li>
+                        <li>@Html.ActionLink("Başvurularım", "Basvurularım", new { id = Model.Id })</li>
+                        <li>@Html.ActionLink("Burslarım", "Burslarım", new { id = Model.Id })</li>
+                        <li>@Html.ActionLink("Belgelerim", "Belgelerim", new { id = Model.Id })</li>
+                        <li>@Html.ActionLink("Mülakatlarım", "Mulakatlarım", new { id = Model.Id })</li>
+                        <li>@Html.ActionLink("Ayarlar", "Ayarlar", new { id = Model.Id })</li>
+                    </ul>
+                </div>
+
+    </body>
+
+
+
+
+
+
+
+    @*<!DOCTYPE html>
+
+        <html>
+        <head>
+            <meta name="viewport" content="width=device-width" />
+            <title>Details</title>
+        </head>
+        <body>
+            <div>
+                <h4>Bursiyer</h4>
+                <hr />
+                <dl class="dl-horizontal">
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Ad)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Ad)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.Soyad)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.Soyad)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.TcKimlikNo)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.TcKimlikNo)
+                    </dd>
+
+                    <dt>
+                        @Html.DisplayNameFor(model => model.ePosta)
+                    </dt>
+
+                    <dd>
+                        @Html.DisplayFor(model => model.ePosta)
+                    </dd>
+
+                </dl>
+            </div>
+            <p>
+                @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+                @Html.ActionLink("Back to List", "Index")
+            </p>
+        </body>
+        </html>*@
+

@@ -1,0 +1,23 @@
+﻿@model List<BursumMobil.Models.Burslar>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Burslarım</title>
+</head>
+<body>
+    <div>@foreach (var item in Model)
+    {
+        @item.Aciklama;
+
+         @ViewBag.Bursiyer;
+       
+    }
+    </div>
+</body>
+</html>

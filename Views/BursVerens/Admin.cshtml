@@ -1,0 +1,84 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = null;
+}
+<head>
+    <link rel="stylesheet" type="" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"><!--BUNLAR ICON EKLEMEK İÇİN KÜTÜPHANELER-->
+    <link rel="stylesheet" type="text/css" href="~/css/style.css" />
+    <script type="text/javascript" src="~/js/jquery.js"></script>
+    <!-- End WOWSlider.com HEAD section -->
+    <link rel="stylesheet" href="~/css/bootstrap-social.css">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="~/css/styles.css">
+    <link rel="stylesheet" href="~/css/reset.css">
+</head>
+
+<hr>
+
+<div class="row">
+    <div class="col-xl-3 col-lg-3 col-md-4 col-sm-6 mx-5 mx-md-auto">
+
+
+        <p class="text-xl-left" style="font-size: x-large">Bursiyerler</p>
+
+        <hr />
+        <p>
+            @Html.ActionLink("Bursiyerlerim", "Bursiyerlerim", "Bursiyerler", new { id = Model.Id }, new { @class = "btn btn-primary" })
+        </p>
+
+        <hr />
+
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 ">
+        <p class="text-xl-left" style="font-size: x-large">Onay Bekleyenler</p>
+
+        <hr />
+        <p>
+            @Html.ActionLink("Onay Bekleyenler", "Index", "OnayBekleyenler", new { id = Model.Id }, new { @class = "btn btn-primary" })
+        </p>
+        <hr>
+
+    </div>
+    <div class="col-xl-4 col-lg-4 col-md-4 col-sm-6 ">
+        <p class="text-xl-left" style="font-size: x-large">Burslarım</p>
+
+        <hr />
+        <p>
+            @Html.ActionLink("Burslarım", "Burslarım", "Burslars", new { id = Model.Id }, new { @class = "btn btn-primary" })
+        </p>
+        <hr>
+
+    </div>
+</div>
+@*<table class="table table-bordered table-hover table-striped">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.KategoriAdi)
+        </th>
+        <th style="width:10%">
+            @Html.DisplayNameFor(model => model.BlogSayisi)
+        </th>
+        <th style="width:15%;"></th>
+    </tr>*@
+
+@*@foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.KategoriAdi
+            </td>
+            <td>
+               @item.BlogSayisi
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-xs" }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }, new { @class = "btn btn-primary btn-xs" }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-xs" })
+            </td>
+        </tr>
+    }*@
+

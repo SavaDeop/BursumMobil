@@ -1,0 +1,96 @@
+﻿@model IEnumerable<BursumMobil.Models.Burslar>
+@{
+    ViewBag.Title = "BursArama";
+    Layout = "~/Views/Shared/_LayoutPage1.cshtml";
+}
+
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    @*<p>
+            @Html.ActionLink("Create New", "Create")
+        </p>*@
+    @*<table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BursVeren.KurumAdi)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Miktar)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Sure)
+            </th>
+            <th></th>
+        </tr>*@
+
+
+    <div class="yenigenel">
+        <div class="row mb-2">
+            @foreach (var item in Model)
+            {
+
+                <div class="col-md-4">
+                    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+                        <div class="col p-4 d-flex flex-column position-static">
+                            <strong class="d-inline-block mb-2 text-dark">@item.BursVeren.KurumAdi</strong>
+                            <hr>
+                            <div class="mb-1 text-muted"></div>
+                            <p class="card-text mb-auto"> @Html.DisplayFor(modelItem => item.Aciklama)</p>
+                            <div class="col p-1">
+                                @Html.ActionLink("Detay", "BursDetay", new { id = item.Id })
+                                @*<a href="#" class=" stretched-link  btn-sm btn btn-primary ">Başvuru</a>*@
+                            </div>
+                        </div>
+                        <div class="col-auto d-none d-lg-block">
+                            <svg width="160" height="225"
+                                 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                <image href="~/images/alku-logo.png" height="100%" width="100%" />
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                @*<tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.BursVeren.KurumAdi)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Aciklama)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Miktar)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Sure)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                        </td>
+                    </tr>*@
+            }
+
+
+        </div>
+    </div>
+
+
+</body>
+</html>
+
+

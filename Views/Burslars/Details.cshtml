@@ -1,0 +1,58 @@
+﻿@model BursumMobil.Models.Burslar
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Details</title>
+</head>
+<body>
+    <div>
+        <h4>Burslar</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.BursVeren.KurumAdi)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.BursVeren.KurumAdi)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Aciklama)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Aciklama)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Miktar)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Miktar)
+            </dd>
+    
+            <dt>
+                @Html.DisplayNameFor(model => model.Sure)
+            </dt>
+    
+            <dd>
+                @Html.DisplayFor(model => model.Sure)
+            </dd>
+    
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</body>
+</html>

@@ -1,0 +1,167 @@
+header{
+    background:burlywood;
+    height: 60px;
+}
+
+header ul{
+    left: 200px;
+}
+header ul li {
+    float: left;
+    font-size:20px; 
+    margin-left: 0px;
+}
+header ul li a {
+    padding: 20px;
+    display: block;
+    color:#eee;
+    
+}
+header ul li a:hover{
+    text-decoration: none;
+    color: white;
+    background: navajowhite;
+}
+
+button{
+    padding: 20px;
+    font-size: 20px;
+    float: right;
+    color: white;
+    background-color:burlywood;
+    border: none;
+    
+    
+}
+button:hover{
+    text-decoration: none;
+    color: white;
+    background: navajowhite;
+}
+.logo img{
+    float: left;
+    font-weight: 200;
+    
+    height: 60px;
+    margin-left: 20px;
+    background:burlywood;
+
+}
+
+.logot img{
+  
+    float: right ;
+    height: 60px;
+    background:burlywood;
+
+}
+.genel {
+    width: 1300px;
+    height: 360px;
+    margin: auto;
+    margin-top: 10px;
+    
+
+}
+.adımlar {
+    height: 200px;
+    margin-top: 0px;
+    background:#eee;
+    margin-bottom: 20px;
+}
+.adım{
+    height: 190px;
+    width: 300px;
+    padding: 10px;
+    text-align:center ;
+    background:white;
+    margin: 14px 12px;
+    float: left;
+}
+.adım  h2{
+    padding: 5px;
+    font-size: 18px;
+    font-weight: bold;
+}
+.adım:hover {
+    background: naj;
+    transition: all 0.5s;
+}
+.wowslidercontainer {
+    height: 300px;
+    
+
+}
+
+.ogrenciler {
+    height: 400px;
+    margin-bottom: 20px;
+}
+.film{
+    
+    width: 500px;
+    float: left;
+    margin: 40px;
+}
+.film h2 {
+
+    font-weight: bold; 
+    font-size: 20px;
+    padding: 10px;
+    border-bottom: 2px dotted white;
+    margin-top: 10px;
+    
+}
+.film img { 
+    float: left;
+    padding: 10px;
+    padding-right: 10px;
+    
+
+}
+.film p {
+    
+    padding: 20px;
+}
+
+.footer {  background:#222222;width:100%; height:210px;float:left;color:white; font-family:arial;}
+.footer #kutu b {font-size:14px;}
+* { margin:0px;padding:0px;}
+.footer_container{ width:768px; height:175px; margin:30px auto;}
+.footer ul {list-style-type:none;margin:17px 0;padding:0px;}
+#kutu { width:auto; height:125px; float:left;}
+.footer ul li {float:left;font-family:tahoma; font-size:12px; margin-bottom:8px; clear:left;  }
+#kutu:last-child li {float:left;clear:none;margin-right:10px;}
+.footer img{float: right; height: 90px; }
+.footer ul li a{
+    
+    display: block;
+    color:#eee;
+    font-family: Arial ;
+}
+.sosyal{
+    float: right;
+    position: absolute;
+    right: 200px ;
+    width: 200px;
+    height: 100px;
+    margin-top: 0px;
+}
+.sosyal h2 {
+    font-size: 20px;
+    font-weight: bold;
+    padding : 10px;
+    color: white;
+    border-bottom: 2px solid #ddd;
+    margin-bottom: 10px ;
+   
+}
+.yenigenel{
+    width: 1300px;
+    height: 700px;
+    margin: auto;
+    margin-top: 10px;
+}
+.bursverenler{
+    height: 1200px;
+}

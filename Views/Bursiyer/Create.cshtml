@@ -1,0 +1,311 @@
+﻿@model BursumMobil.Models.Bursiyer
+
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width initial">
+    <meta http-equiv="X-UA-Copatible" content="ie=edge">
+    <title>BURSUM MOBIL |Türkiye'nin Burs Platformu </title>
+    <style>
+        @@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;1,300;1,400;1,600;1,700;1,800&display=swap');
+        @@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap');
+
+        body {
+            background-color: #efeee8;
+        }
+
+        .sidebar {
+            margin-top: 56px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 30px;
+            height: 100%;
+            background-color: #fff;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .35);
+        }
+
+        .title {
+            font-weight: 700;
+            font-size: 40px;
+            font-family: 'Roboto Condensed', sans-serif;
+            text-align: center;
+        }
+
+        .login-form {
+            display: table;
+            margin: auto;
+        }
+
+        .form-group {
+            margin-bottom: 10px;
+        }
+
+        .form-control {
+            width: 290px;
+            padding: 15px;
+            color: #1a1a1a;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+        }
+
+
+            .form-control:focus {
+                border: 1px solid burlywood;
+            }
+
+
+        .btn {
+            margin-top: 15px;
+            background-color: burlywood;
+            color: #fff;
+            cursor: pointer;
+            font-weight: 700;
+            font-size: 16px;
+            font-family: 'Roboto Condensed', sans-serif;
+            width: 150px;
+            height: 50px;
+            border-radius: 5px;
+            border: none;
+            box-shadow: 0 5px 10px 0 rgba(0, 0, 0, .35);
+        }
+
+        .btn-left {
+            float: right;
+            margin-left: 3px;
+        }
+
+        .ml-3 {
+            margin-left: 10px;
+        }
+
+        header {
+            margin-left: -9px;
+            margin-top: -19px;
+            background: burlywood;
+            height: 60px;
+            width: 1440px;
+        }
+
+            header ul {
+                left: 200px;
+            }
+
+                header ul li {
+                    float: left;
+                    font-size: 20px;
+                    margin-left: 0px;
+                    list-style-type: none;
+                }
+
+                    header ul li a {
+                        padding: 20px;
+                        display: block;
+                        color: #eee;
+                        text-decoration: none;
+                    }
+
+                        header ul li a:hover {
+                            text-decoration: none;
+                            color: white;
+                            background: navajowhite;
+                        }
+
+        .logo img {
+            float: left;
+            font-weight: 200;
+            height: 60px;
+            margin-left: 20px;
+            background: burlywood;
+        }
+
+        button {
+            padding: 17px;
+            font-size: 20px;
+            float: right;
+            color: white;
+            background-color: burlywood;
+            border: none;
+        }
+
+            button:hover {
+                text-decoration: none;
+                color: white;
+                background: navajowhite;
+            }
+
+        body {
+            background-image: url(/Users/irem/Desktop/bitirme/images/giris.jpg);
+            background-repeat: no-repeat;
+        }
+    </style>
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <header>
+            <div class="logo">
+                <img src="~/images/scholarship.png" alt="">
+            </div>
+            <ul>
+                <li>@Html.ActionLink("Anasayfa", "index", "Home")</li>
+                <li>@Html.ActionLink("Burs Verenler", "index", "BursVerens")</li>
+                <li>@Html.ActionLink("Burs Arama", "index", "Burslar")</li>
+                <li><a href="">Etkinlikler(deaktif)</a></li>
+
+            </ul>
+        </header>
+
+        <div class="sidebar">
+            <h2 class="title">Öğrenci Üyelik Formu</h2>
+            <form action="" method="POST">
+                <div class="login-form">
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Ad, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Ad, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Ad, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Soyad, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Soyad, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Soyad, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TcKimlikNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.TcKimlikNo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TcKimlikNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+                @Html.LabelFor(model => model.ePosta, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ePosta, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ePosta, "", new { @class = "text-danger" })
+                </div>
+
+               
+                    @Html.LabelFor(model => model.Sifre, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Sifre, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Sifre, "", new { @class = "text-danger" })
+                    </div>
+
+
+                    @*<small>E-Posta Tekrarı</small>
+        <div class="form-group">
+            <input class="form-control" type="text">
+        </div>*@
+
+                    @*<small>Şifre</small>
+        <div class="form-group">
+            <input class="form-control" type="password">
+
+        </div>*@
+                    <input type="checkbox" name="secim1" > Kullanıcı Sözleşmesini Okudum ve Kabul Ediyorum. <br>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Üye Ol" class="btn btn-default" />
+                        </div>
+                    </div>
+
+
+
+</form>
+
+
+        </div>
+
+    }
+</body>
+
+
+@*<!DOCTYPE html>
+
+    <html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>Create</title>
+    </head>
+    <body>
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/jqueryval")
+
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <h4>Bursiyer</h4>
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Ad, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Ad, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Ad, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.Soyad, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Soyad, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Soyad, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.TcKimlikNo, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.TcKimlikNo, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.TcKimlikNo, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.ePosta, htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.ePosta, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.ePosta, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @Html.LabelFor(model => model.BurslarId, "BurslarId", htmlAttributes: new { @class = "control-label col-md-2" })
+                    <div class="col-md-10">
+                        @Html.DropDownList("BurslarId", null, htmlAttributes: new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.BurslarId, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="Create" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+
+        <div>
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    </body>
+    </html>*@
